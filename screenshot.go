@@ -26,7 +26,7 @@ func writeImage(w http.ResponseWriter, img string) {
 
 func capture(w http.ResponseWriter, r *http.Request) {
 	img := "/tmp/screencapture.jpg"
-	cmd := exec.Command("screencapture " + img)
+	cmd := exec.Command("screencapture ", img)
 	cmd.Run()
 	writeImage(w, img)
 }
